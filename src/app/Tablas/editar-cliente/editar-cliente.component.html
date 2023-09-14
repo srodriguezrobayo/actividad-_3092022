@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-sm-12">
+      <form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="Nombre_cliente">Nombre Cliente</label>
+            <input type="text" class="form-control" required [(ngModel)]="cliente.Nombre_cliente" name="Nombre_cliente" id="Nombre_cliente" placeholder="Escriba el nombre">
+          </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="Correoelectronico_cliente">Correo Electronico Cliente</label>
+              <input type="text" class="form-control" required [(ngModel)]="cliente.Correoelectronico_cliente" name="Correoelectronico_cliente" id="Correoelectronico_cliente" placeholder="Escriba el correo">
+            </div>
+        </fieldset>        
+        <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="Password_cliente">Contraseña Cliente</label>
+              <input type="password" class="form-control" required [(ngModel)]="cliente.Password_cliente" name="Password_cliente" id="Password_cliente" placeholder="Escriba el contraseña">
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="Telefono_cliente">Telefono Cliente</label>
+              <input type="number" class="form-control" required [(ngModel)]="cliente.Telefono_cliente" name="Telefono_cliente" id="Telefono_cliente" placeholder="Escriba el Telefono">
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="Genero_idGenero">Genero Cliente</label>
+              <input type="number" class="form-control" required [(ngModel)]="cliente.Genero_idGenero" name="Genero_idGenero" id="Genero_idGenero" placeholder="Escriba el Genero">
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="Ciudad_id_Ciudad">Ciudad Cliente</label>
+              <input type="number" class="form-control" required [(ngModel)]="cliente.Ciudad_id_Ciudad" name="Ciudad_id_Ciudad" id="Ciudad_id_Ciudad" placeholder="Escriba la Ciudad">
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success" [disabled]="!usuarioForm.form.valid"><img src="../../../assets/check-regular-24.png" alt="Submit"> Entregar</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>

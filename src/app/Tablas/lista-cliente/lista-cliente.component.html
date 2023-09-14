@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <form class="form-inline">
+          <fieldset class="form-group col-sm-11"></fieldset>
+          <fieldset class="form-group col-sm-1">
+            <a class="btn btn-info" [routerLink]="['/cliente/agregar']"><img src="../../../assets/file-plus-solid-24.png" alt="Agregar +"></a>
+          </fieldset>
+        </form>
+        <br>
+        <table class="table table-striped">
+          <thead>
+            <tr class="row">
+              <th class="col-sm-1">ID</th>
+              <th class="col-sm-1">NOMBRE</th>
+              <th class="col-sm-2">CORREO ELECTRONICO</th>
+              <th class="col-sm-3">CONTRASEÑA</th>
+              <th class="col-sm-1">TELEFONO</th>
+              <th class="col-sm-1">GENERO</th>
+              <th class="col-sm-1">CIUDAD</th>
+              <th class="col-sm-2">ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cliente of cliente | async" class="row">
+              <td class="col-sm-1"><i>{{ cliente.id_Cliente }}</i></td>
+              <td class="col-sm-1"><i>{{ cliente.Nombre_cliente }}</i></td>
+              <td class="col-sm-2"><i>{{ cliente.Correoelectronico_cliente }}</i></td>
+              <td class="col-sm-3"><i>{{ cliente.Password_cliente }}</i></td>
+              <td class="col-sm-1"><i>{{ cliente.Telefono_cliente }}</i></td>
+              <td class="col-sm-1"><i>{{ cliente.Genero_idGenero }}</i></td>
+              <td class="col-sm-1"><i>{{ cliente.Ciudad_id_Ciudad }}</i></td>
+              <td class="col-sm-1">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-primary" [routerLink]="['/cliente/actualizar/', cliente.id_Cliente]"><img src="../../../assets/edit-alt-solid-24.png" alt="Editar"></a>
+                </fieldset>
+              </td>
+              <td class="col-sm-1">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-danger" (click)="borrarCliente(cliente.id_Cliente)"><img src="../../../assets/trash-solid-24.png" alt="Borrar"></a>
+                </fieldset>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

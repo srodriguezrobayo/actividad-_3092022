@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-sm-12">
+      <form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="nombre_departamento">Nombre Departamento</label>
+            <input type="text" class="form-control" required [(ngModel)]="departamento.nombre_departamento" name="nombre_departamento" id="nombre_departamento" placeholder="Escriba el nombre">
+          </div>
+        </fieldset>
+        <fieldset class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success" [disabled]="!usuarioForm.form.valid"><img src="../../../assets/check-regular-24.png" alt="Submit"> Entregar</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  

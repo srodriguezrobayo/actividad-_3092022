@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <form class="form-inline">
+          <fieldset class="form-group col-sm-11"></fieldset>
+          <fieldset class="form-group col-sm-1">
+            <a class="btn btn-info" [routerLink]="['/ciudad/agregar']"><img src="../../../assets/file-plus-solid-24.png" alt="Agregar +"></a>
+          </fieldset>
+        </form>
+        <br>
+        <table class="table table-striped">
+          <thead>
+            <tr class="row">
+              <th class="col-sm-2">ID</th>
+              <th class="col-sm-2">NOMBRE CIUDAD</th>
+              <th class="col-sm-2">DEPARTAMENTO UBICADO</th>
+              <th class="col-sm-2">ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ciudad of ciudad | async" class="row">
+              <td class="col-sm-2"><i>{{ ciudad.id_Ciudad }}</i></td>
+              <td class="col-sm-2"><i>{{ ciudad.nombre_ciudad }}</i></td>
+              <td class="col-sm-2"><i>{{ ciudad.Departamento_idDepartamento }}</i></td>
+              <td class="col-sm-1">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-primary" [routerLink]="['/ciudad/actualizar/', ciudad.id_Ciudad]"><img src="../../../assets/edit-alt-solid-24.png" alt="Editar"></a>
+                </fieldset>
+              </td>
+              <td class="col-sm-1">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-danger" (click)="borrarCiudad(ciudad.id_Ciudad)"><img src="../../../assets/trash-solid-24.png" alt="Borrar"></a>
+                </fieldset>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

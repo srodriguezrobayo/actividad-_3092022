@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <form class="form-inline">
+          <fieldset class="form-group col-sm-11"></fieldset>
+          <fieldset class="form-group col-sm-1">
+            <a class="btn btn-info" [routerLink]="['/departamento/agregar']"><img src="../../../assets/file-plus-solid-24.png" alt="Agregar +"></a>
+          </fieldset>
+        </form>
+        <br>
+        <table class="table table-striped">
+          <thead>
+            <tr class="row">
+              <th class="col-sm-2">ID</th>
+              <th class="col-sm-2">NOMBRE DEPARTAMENTO</th>
+              <th class="col-sm-2">ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let departamento of departamento | async" class="row">
+              <td class="col-sm-2"><i>{{ departamento.idDepartamento }}</i></td>
+              <td class="col-sm-2"><i>{{ departamento.nombre_departamento }}</i></td>
+              <td class="col-sm-1">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-primary" [routerLink]="['/departamento/actualizar/', departamento.idDepartamento]"><img src="../../../assets/edit-alt-solid-24.png" alt="Editar"></a>
+                </fieldset>
+              </td>
+              <td class="col-sm-1">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-danger" (click)="borrarDepartamento(departamento.idDepartamento)"><img src="../../../assets/trash-solid-24.png" alt="Borrar"></a>
+                </fieldset>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

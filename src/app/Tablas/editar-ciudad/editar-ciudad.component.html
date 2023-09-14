@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-sm-12">
+      <form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="nombre_ciudad">Nombre Ciudad</label>
+            <input type="text" class="form-control" required [(ngModel)]="ciudad.nombre_ciudad" name="nombre_ciudad" id="nombre_ciudad" placeholder="Escriba el nombre">
+          </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="Departamento_idDepartamento">Id Departamento</label>
+              <input type="text" class="form-control" required [(ngModel)]="ciudad.Departamento_idDepartamento" name="Departamento_idDepartamento" id="Departamento_idDepartamento" placeholder="Escriba el id del departamento">
+            </div>
+          </fieldset>
+        <fieldset class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success" [disabled]="!usuarioForm.form.valid"><img src="../../../assets/check-regular-24.png" alt="Submit"> Entregar</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>

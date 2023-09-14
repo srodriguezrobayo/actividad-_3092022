@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-sm-12">
+      <form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="Nombre_empresa">Nombre Empresa</label>
+            <input type="text" class="form-control" required [(ngModel)]="empresa.Nombre_empresa" name="Nombre_empresa" id="Nombre_empresa" placeholder="Escriba el nombre">
+          </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="Correoelectronico_empresa">Correo Electronico Empresa</label>
+              <input type="text" class="form-control" required [(ngModel)]="empresa.Correoelectronico_empresa" name="Correoelectronico_empresa" id="Correoelectronico_empresa" placeholder="Escriba el correo">
+            </div>
+        </fieldset>        
+        <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="Password_empresa">Contraseña Empresa</label>
+              <input type="password" class="form-control" required [(ngModel)]="empresa.Password_empresa" name="Password_empresa" id="Password_empresa" placeholder="Escriba el contraseña">
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="Telefono_empresa">Telefono Empresa</label>
+              <input type="number" class="form-control" required [(ngModel)]="empresa.Telefono_empresa" name="Telefono_empresa" id="Telefono_empresa" placeholder="Escriba el Telefono">
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="Ciudad_id_Ciudad">Ciudad Empresa</label>
+              <input type="number" class="form-control" required [(ngModel)]="empresa.Ciudad_id_Ciudad" name="Ciudad_id_Ciudad" id="Ciudad_id_Ciudad" placeholder="Escriba la Ciudad">
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success" [disabled]="!usuarioForm.form.valid"><img src="../../../assets/check-regular-24.png" alt="Submit"> Entregar</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>

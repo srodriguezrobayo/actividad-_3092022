@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <form class="form-inline">
+          <fieldset class="form-group col-sm-11"></fieldset>
+          <fieldset class="form-group col-sm-1">
+            <a class="btn btn-info" [routerLink]="['/lugar_reserva/agregar']"><img src="../../../assets/file-plus-solid-24.png" alt="Agregar +"></a>
+          </fieldset>
+        </form>
+        <br>
+        <table class="table table-striped">
+          <thead>
+            <tr class="row">
+              <th class="col-sm-2">ID</th>
+              <th class="col-sm-2">DIRECCION LUGAR</th>
+              <th class="col-sm-2">NOMBRE LUGAR</th>
+              <th class="col-sm-2">CIUDAD UBICADO</th>
+              <th class="col-sm-2">ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let lugar_reserva of lugar_reserva | async" class="row">
+              <td class="col-sm-2"><i>{{ lugar_reserva.ID_lugreserv }}</i></td>
+              <td class="col-sm-2"><i>{{ lugar_reserva.Direccion_lugarreserv }}</i></td>
+              <td class="col-sm-2"><i>{{ lugar_reserva.Nom_lugreserv }}</i></td>
+              <td class="col-sm-2"><i>{{ lugar_reserva.Ciudad_id_Ciudad }}</i></td>
+              <td class="col-sm-1">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-primary" [routerLink]="['/lugar_reserva/actualizar/', lugar_reserva.ID_lugreserv]"><img src="../../../assets/edit-alt-solid-24.png" alt="Editar"></a>
+                </fieldset>
+              </td>
+              <td class="col-sm-1">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-danger" (click)="borrarLugarReserva(lugar_reserva.ID_lugreserv)"><img src="../../../assets/trash-solid-24.png" alt="Borrar"></a>
+                </fieldset>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
